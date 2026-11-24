@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://4h17p4kxilyq"]
+
+[ext_resource type="Script" uid="uid://b451ccupwre1b" path="res://new_piskel(9).gd" id="1_dl81w"]
+[ext_resource type="Texture2D" uid="uid://cr7ultuptcy52" path="res://New Piskel (9).png" id="1_gf172"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmmnc"]
+size = Vector2(20, 23)
+
+[node name="Area2D" type="Area2D" unique_id=918468332]
+script = ExtResource("1_dl81w")
+
+[node name="NewPiskel(9)" type="Sprite2D" parent="." unique_id=145694025]
+position = Vector2(323, 285)
+texture = ExtResource("1_gf172")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=61493050]
+position = Vector2(323, 286.5)
+shape = SubResource("RectangleShape2D_kmmnc")
+
+[node name="Timer" type="Timer" parent="." unique_id=448712600]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
